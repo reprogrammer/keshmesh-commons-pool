@@ -1,0 +1,11 @@
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+ <copy todir="/home/mvakili2/git/keshmesh-commons-pool/target/apidocs/META-INF">
+  <fileset dir="/home/mvakili2/git/keshmesh-commons-pool">
+   <include name="LICENSE.txt"/>
+   <include name="NOTICE.txt"/>
+  </fileset>
+ </copy>
+</target>
+
+</project>
