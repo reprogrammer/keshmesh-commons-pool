@@ -41,6 +41,8 @@ import org.apache.commons.pool2.ObjectPool;
 import org.apache.commons.pool2.PoolUtils;
 import org.apache.commons.pool2.PoolableObjectFactory;
 
+import edu.illinois.keshmesh.annotations.EntryPoint;
+
 /**
  * A configurable {@link ObjectPool} implementation.
  * <p>
@@ -718,6 +720,7 @@ public class GenericObjectPool<T> extends BaseObjectPool<T>
      * @throws NoSuchElementException
      *             if an instance cannot be returned
      */
+    @EntryPoint
     public T borrowObject(long borrowMaxWait) throws Exception {
         assertOpen();
 
@@ -1224,6 +1227,7 @@ public class GenericObjectPool<T> extends BaseObjectPool<T>
      * @param delay
      *            milliseconds between evictor runs.
      */
+    @EntryPoint
     protected void startEvictor(long delay) {
         if (null != evictor) {
             EvictionTimer.cancel(evictor);
